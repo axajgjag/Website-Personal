@@ -1,0 +1,479 @@
+<html lang="en">
+<head>
+    <title>Barelang MRT</title>
+    <link rel="icon" type="image/x-icon" href="images/Rounded Logo.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="script.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;900&display=swap">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Nav -->
+    <header>
+        <nav class="navbar navbar-dark">
+            <div class="container-fluid">
+
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/Transparant Logo.png" alt="nav-logo">
+                </a>
+
+                <!-- Toggler Nav -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                    
+                    <!-- Header -->
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Navigation</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                
+                            <!-- Home -->
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                            </li>
+                
+                            <!-- About -->
+                            <li class="nav-item">
+                                <a class="nav-link active" href="about.html">About</a>
+                            </li>
+
+                            <!-- Team -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Team
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="KKI.html">Surface Team</a></li>
+                                    <li><a class="dropdown-item" href="underwater.html">Underwater Team</a></li>                                                                                    
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="KRTI.html">VTOL Team</a></li>
+                                    <li><a class="dropdown-item" href="alumni.html">Alumni</a></li>                                   
+                                </ul>
+                                </li>
+                
+                            <!-- Competition -->
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Competition
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="roboboat2022.html">Roboboat 2022</a></li>
+                                <li><a class="dropdown-item" href="roboboat2023.html">Roboboat 2023</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="kkctbn2022.html">KKCTBN 2022</a></li>
+                                <li><a class="dropdown-item" href="kkctbn2023.html">KKCTBN 2023</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="krbai2023.html">KRBAI 2023</a></li>
+                                <li><a class="dropdown-item" href="#">KRBAI 2024</a></li>
+                                <li><a class="dropdown-item" href="#">SAUVC 2024</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="KRTI2025.html">KRTI 2025</a></li>
+                            </ul>
+                            </li>                                          
+
+                            <!-- Sponsor -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="sponsor.html">Sponsor</a>
+                            </li>
+
+                            <!-- Contact -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>     
+    </header>
+
+
+     <!-- Background Music -->
+     <audio id="backgroundMusic" autoplay loop>
+        <source src="video/videoplayback.m4a" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Controls -->
+    <div class="music-controls">
+        <button onclick="playMusic()">Play</button>
+        <button onclick="pauseMusic()">Pause</button>
+        <button onclick="stopMusic()">Stop</button>
+    </div>
+    <script>
+        const backgroundMusic = document.getElementById("backgroundMusic");
+
+        // Play, pause, and stop music
+        function playMusic() {
+            backgroundMusic.play();
+        }
+
+        function pauseMusic() {
+            backgroundMusic.pause();
+        }
+
+        function stopMusic() {
+            backgroundMusic.pause();
+            backgroundMusic.currentTime = 0; // Reset to start
+        }
+
+        // Remove mute on first click
+        document.addEventListener('click', () => {
+            if (backgroundMusic.muted) {
+                backgroundMusic.muted = false;
+            }
+        });
+    </script>
+
+
+    <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">↑</button>
+    <script>
+        // Tampilkan tombol ketika pengguna menggulir ke bawah 200px dari atas dokumen
+        window.onscroll = function() {scrollFunction()};
+    
+        function scrollFunction() {
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+    
+        // Fungsi untuk menggulir ke atas
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+    
+
+    <!-- Hero -->
+    <main>
+        <div class="hero">
+            <div>
+                <h1>
+                    ABOUT US
+                </h1>
+                <h3>
+                    BARELANG MRT
+                </h3>
+                <p>
+                    "Charting new depths of innovation, Barelang MRT proudly navigating the waves of technology 
+                    from Politeknik Negeri Batam, Indonesia. Join us as we dive into the future, where ingenuity meets the open sea of 
+                    possibilities."
+                </p>
+            </div>
+        </div>
+    </main>
+    
+    <!-- About -->
+    <body>
+    <!-- Your HTML content here -->
+    
+    <!-- About Section -->
+    <div class="container-fluid about">
+        <div class="row">
+            <div class="image col-lg-5 col-md-5">
+                <img src="images/Rounded Logo.png" alt="">
+            </div>
+            <div class="text col-lg-7 col-md-7">
+                <h2>About Us</h2>
+                <p>
+                    Barelang MRT is a robotics team from <text class="highlight-small">Politeknik Negeri Batam</text> specializing in surface, underwater, and aerial robotics. The team now consists of three divisions:
+                    <text class="highlight-small">Barelang MRT - Nereus</text>: Develops autonomous surface vessels (ASVs) for surface missions.
+                    Underwater Division: Focuses on autonomous underwater vessels (AUVs) for tasks below the water surface.
+                    <text class="highlight-small">Barelang MRT - KRTI-VTOL</text>: A new division specializing in Vertical Take-Off and Landing (VTOL) drones, expanding the team's expertise to aerial robotics.
+                    With these divisions, Barelang MRT continues to advance in marine, underwater, and aerial robotics at national and international levels.
+                    <br>
+                    The incorporation of these teams into Barelang MRT demonstrates the collaboration and integration of expertise in various fields of robotics, both marine and aerial.
+                </p>
+                <h3>Politeknik Negeri Batam, Indonesia</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const aboutSection = document.querySelector('.about');
+            
+            function handleScroll() {
+                const sectionPosition = aboutSection.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight;
+
+                if (sectionPosition < screenPosition) {
+                    aboutSection.classList.add('appear');
+                    window.removeEventListener("scroll", handleScroll); // Optional: Remove listener once animation is done
+                }
+            }
+
+            window.addEventListener("scroll", handleScroll);
+        });
+    </script>
+</body>
+
+    <!-- Quote -->
+    <div class="container-fluid bg-white quote">
+        <!-- Konten lainnya -->   
+        <p>~~Raden Ajeng Kartini~~<br>
+            better known as Kartini, is an Indonesian National Hero who contributed to the struggle for education in Indonesia.
+            Kartini's efforts inspire generations to prioritize education for all.
+            Breaking barriers for equality and empowerment.
+        </p>
+        <div class="image col-lg-7 col-md-7" >
+            <img src="images/kartini2.png" alt="Descriptive Alt Text" style="width: 50%; height: 55%; object-fit: cover;">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const aboutSection = document.querySelector('.about');
+            
+            function handleScroll() {
+                const sectionPosition = aboutSection.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight;
+
+                if (sectionPosition < screenPosition) {
+                    aboutSection.classList.add('appear');
+                    window.removeEventListener("scroll", handleScroll); // Optional: Remove listener once animation is done
+                }
+            }
+
+            window.addEventListener("scroll", handleScroll);
+        });
+    </script>
+
+    <!-- Content -->
+    <div class="container-fluid p5">
+        <div class="row">
+            <div class="col-lg-5 col-md-5">
+            </div>
+            <div class="text-content-right col-lg-7 col-md-7">
+                <h3>National Competition</h3>
+                <p>
+                    The Barelang MRT team also participated in several national competitions such as the National Unmanned Fast Boat Contest <text class="highlight-small">(KKCTBN)</text>, 
+                    the Indonesian Robot Contest <text class="highlight-small">(KRI)</text>, and the Indonesian Flying Robot Contest <text class="highlight-small">(KRTI)</text>.
+                    For the National Unmanned Fast Boat Contest (KKCTBN) has the same concept as RoboBoat. 
+                    for the Indonesian Robot Contest (KRI) is a robot contest that can move underwater. 
+                    Vertical Take-Off and Landing (VTOL) Robot Contest, a flying robot capable of vertical take-off, stable flight, and able to carry out certain missions autonomously.
+                </p>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const aboutSection = document.querySelector('.about');
+                
+                function handleScroll() {
+                    const sectionPosition = aboutSection.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight;
+    
+                    if (sectionPosition < screenPosition) {
+                        aboutSection.classList.add('appear');
+                        window.removeEventListener("scroll", handleScroll); // Optional: Remove listener once animation is done
+                    }
+                }
+    
+                window.addEventListener("scroll", handleScroll);
+            });
+        </script>
+
+        
+        <div class="gap"></div>
+        
+        <div class="row">
+            <div class="text-content-left col-lg-7 col-md-7">
+                <h3>International Competition</h3>
+                <p>
+                    The Barelang MRT team participated in several competitions such as <text class="highlight-small">RoboBoat</text> which is an international competition held every year in <text class="highlight-small">Florida, USA</text>. For this reason, the Barelang MRT team was formed to take part in its first competition, RoboBoat 2022. Until now, the Barelang MRT team has participated twice in international competitions start from RoboBoat 2022 to RoboBoat 2023.
+                </p>
+            </div>
+            <div class="col-lg-5 col-md-5">
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- Quote -->
+    <div class="container-fluid bg-white quote">
+        <h1>Setbacks are the stepping stones to success; each failure, a seed for sweeter victories.</h1>
+    </div>
+    
+
+    <!--======= Gallery Section =======-->
+    
+    <section id="gallery" class="container-fluid bg- quote" data-bs-ride="carousel" data-bs-interval="150">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Gallery</h2>
+                <p><span class="highlight">Check Our Gallery</span></p>
+            </div>
+            <!-- Swiper slider -->
+            <div class="gallery-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                    <!-- Each image slide -->
+                    <div class="swiper-slide">
+                        <a class="glightbox" data-gallery="images-gallery" href="images/gambar9.jpeg">
+                            <img src="images/gambar9.jpeg" class="img-fluid" alt="Gallery Image 1" style="width: 70%; height: 30%; object-fit: cover;">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="glightbox" data-gallery="images-gallery" href="images/gambar3.jpg">
+                            <img src="images/gambar3.jpg" class="img-fluid" alt="Gallery Image 2" style="width: 70%; height: 30%; object-fit: cover;">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="glightbox" data-gallery="images-gallery" href="images/gambar10.jpeg">
+                            <img src="images/gambar10.jpeg" class="img-fluid" alt="Gallery Image 3" style="width: 70%; height: 30%; object-fit: cover;">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="glightbox" data-gallery="images-gallery" href="images/Roboboat Team 2.JPG">
+                            <img src="images/Roboboat Team 2.JPG" class="img-fluid" alt="Gallery Image 4" style="width: 80%; height: 30%; object-fit: cover;">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="glightbox" data-gallery="images-gallery" href="images/gambar1.jpg">
+                            <img src="images/gambar1.jpg" class="img-fluid" alt="Gallery Image 5" style="width: 70%; height: 30%; object-fit: cover;">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="glightbox" data-gallery="images-gallery" href="images/kki1.jpg">
+                            <img src="images/kki1.jpg" class="img-fluid" alt="Gallery Image 6" style="width: 70%; height: 30%; object-fit: cover;">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="glightbox" data-gallery="images-gallery" href="images/Roboboat Team 3.JPG">
+                            <img src="images/Roboboat Team 3.JPG" class="img-fluid" alt="Gallery Image 7" style="width: 70%; height: 30%; object-fit: cover;">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="glightbox" data-gallery="images-gallery" href="images/kki3.jpg">
+                            <img src="images/kki3.jpg" class="img-fluid" alt="Gallery Image 8" style="width: 70%; height: 30%; object-fit: cover;">
+                        </a>
+                    </div>
+                </div>
+                <!--Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <!-- End Gallery Section -->
+              
+              <!-- Include required Swiper and Glightbox scripts -->
+              <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+              <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+              <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
+              <script>
+                // Initialize Swiper
+                const swiper = new Swiper('.swiper', {
+                  slidesPerView: 3, //Menampilkan 3 slide sekaligus di layar (default).
+                  spaceBetween: 20, //Memberi jarak antar slide sebesar 20px.
+                  pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                  },
+                  breakpoints: { //Mengatur jumlah slide yang terlihat berdasarkan ukuran layar
+                    640: { slidesPerView: 1, spaceBetween: 20 }, //640px ke bawah: Menampilkan 1 slide dengan jarak 20px
+                    640: { slidesPerView: 2, spaceBetween: 20 }, //768px hingga 768px: Menampilkan 2 slide dengan jarak 30px
+                    640: { slidesPerView: 3, spaceBetween: 20 }, //1024px ke atas: Menampilkan 3 slide dengan jarak 30px.
+                  },
+                });
+              
+                // Initialize Glightbox
+                const lightbox = GLightbox({
+                  selector: '.glightbox',
+                });
+              </script>
+               
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <div class="container-fluid footer text-white">
+        <div class="container">
+            <footer class="py-5">
+                <div class="row">
+                    <div class="col-6 col-md-2 mb-3">
+                    <h5>Event</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="kkctbn2022.html" class="nav-link p-0 text-secondary">KKCTBN 2022</a></li>
+                        <li class="nav-item mb-2"><a href="kkctbn2023.html" class="nav-link p-0 text-secondary">KKCTBN 2023</a></li>
+                        <li class="nav-item mb-2"><a href="roboboat2022.html" class="nav-link p-0 text-secondary">RoboBoat 2022</a></li>
+                        <li class="nav-item mb-2"><a href="roboboat2023.html" class="nav-link p-0 text-secondary">RoboBoat 2023</a></li>
+                        <li class="nav-item mb-2"><a href="krbai2023.html" class="nav-link p-0 text-secondary">KRBAI 2023</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">KRBAI 2024</a></li>
+                    </ul>
+                    </div>
+            
+                    <div class="col-6 col-md-2 mb-3">
+                    <h5>Team</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="division.html" class="nav-link p-0 text-secondary">Division</a></li>
+                        <li class="nav-item mb-2"><a href="alumni.html" class="nav-link p-0 text-secondary">Alumni</a></li>
+                        <li class="nav-item mb-2"><a href="surface.html" class="nav-link p-0 text-secondary">BMRT Nereus</a></li>
+                        <li class="nav-item mb-2"><a href="underwater.html" class="nav-link p-0 text-secondary">BMRT Underwater</a></li>
+                    </ul>
+                    </div>
+            
+                    <div class="col-6 col-md-2 mb-3">
+                    <h5>Links</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0 text-secondary">About</a></li>
+                        <li class="nav-item mb-2"><a href="gallery.html" class="nav-link p-0 text-secondary">Gallery</a></li>
+                        <li class="nav-item mb-2"><a href="sponsor.html" class="nav-link p-0 text-secondary">Sponsor</a></li>
+                    </ul>
+                    </div>
+            
+                    <div class="col-md-5 offset-md-1 mb-3">
+                    <form>
+                        <h5>Barelang MRT</h5>
+                        <p>For Your Goals Beyond Horizon</p>
+                        <div class="d-flex flex-row flex-sm-row w-100 gap-2">
+                            <span>
+                                <img src="images/Map.png" alt="Location Pin Icon" class="icon">
+                            </span>
+                            <p>Jl. Ahmad Yani Batam Kota. Kota Batam. kepulauan Riau. Indonesia</p>
+                        </div>
+
+                        <div class="d-flex flex-row flex-sm-row w-100 gap-2">
+                            <span>
+                                <img src="images/Gmail.png" alt="Gmail Icon" class="icon">
+                            </span>
+                            <p>mrtbarelang@gmail.com</p>
+                        </div>
+
+                        <div class="d-flex flex-row flex-sm-row w-100 gap-2">
+                            <span>
+                                <img src="images/Instagram.png" alt="Instagram Icon" class="icon">
+                            </span>
+                            <p>barelang_mrt</p>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
